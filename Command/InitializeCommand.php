@@ -89,7 +89,7 @@ class InitializeCommand extends ContainerAwareCommand
             'vendors' => $vendors,
             'theme' => $theme,
             'self' => $self,
-            'assets' => $this->getVendorAssetsDir($input)
+            'assets' => $this->getVendorAssetsDir($input),
             'public' => $input->getOption('web-dir'),
         ];
     }
