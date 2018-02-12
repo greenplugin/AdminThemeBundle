@@ -64,6 +64,10 @@ class InitializeCommand extends ContainerAwareCommand
     {
         return sprintf('%s/%s', $this->getVendorDir($input), $input->getOption('theme-dir'));
     }
+    
+    protected function getVendorAssetsDir(InputInterface $input){
+        return sprintf('%s/avanzu/admin-theme-bundle/Resources/bower/bower_components', $this->getVendorDir($input));
+    }
 
     /**
      * @param ContainerInterface $dic
@@ -85,6 +89,7 @@ class InitializeCommand extends ContainerAwareCommand
             'vendors' => $vendors,
             'theme' => $theme,
             'self' => $self,
+            'assets' => $this->getVendorAssetsDir($input)
             'public' => $input->getOption('web-dir'),
         ];
     }
@@ -137,8 +142,10 @@ class InitializeCommand extends ContainerAwareCommand
         }
 
         $fs->mkdir($folders->public . '/theme');
+        
+        $this->installFonts($io, $folders, $expectedMethod);
 
-        foreach (['bootstrap', 'dist', 'plugins', 'documentation', 'starter.html'] as $directory) {
+        foreach (['bootstrap', 'dist', 'plugins', 'documentation'] as $directory) {
             $io->text("installing <info>$directory</info>");
 
             $lnFrom = sprintf('%s/%s', $folders->theme, $directory);
@@ -146,6 +153,18 @@ class InitializeCommand extends ContainerAwareCommand
 
             $this->establishLink($lnFrom, $lnTo, $expectedMethod);
         }
+    }
+    
+    protected function installFonts(SymfonyStyle $io, $folders, $expectedMethod)
+    {
+        foreach (['css', 'fonts'] as $directory) {
+          $io->text("installing <info>font-awesome [$directory]</info>");
+            
+          $lnFrom = sprintf('%s/fontawesome/%s', $folders->assets, $directory);
+          $lnTo = sprintf('%s/theme/font-awesome/%s', $folders->public, $directory);
+            
+          $this->establishLink($lnFrom, $lnTo, $expectedMethod);
+        }  
     }
 
     /**
