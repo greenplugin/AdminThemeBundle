@@ -30,7 +30,7 @@
         "bootbox"                   : "*",
         "fontawesome"               : "~4.7",
         "ionicons"                  : "*",
-        "fullcalendar"              : "~4.0",
+        "fullcalendar"              : "~3.7",
         "bootstrap"                 : "~3.3.6",
         "adminlte"                  : "~2.3"
     }
