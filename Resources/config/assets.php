@@ -23,7 +23,7 @@ return call_user_func(
                         $jsAssets . 'bower/bower_components/jquery-ui/jquery-ui.js',
                         $jsAssets . 'bower/bower_components/underscore/underscore.js',
                         $jsAssets . 'bower/bower_components/bootstrap/dist/js/bootstrap.min.js',
-                        $jsAssets . 'bower/bower_components/bootbox/dist/bootbox.min.js',
+                        $jsAssets . 'bower/bower_components/bootbox/dist/bootbox.all.min.js',
                     ],
                 ],
                 'tools_js' => [
