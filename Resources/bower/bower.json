@@ -24,7 +24,7 @@
         "modernizr"                 : ">=2.5.0 <3.0",
         "spinjs"                    : "2.3.2",
         "marionette"                : "*",
-        "pickadate"                 : "3*",
+        "pickadate"                 : "2.*",
         "holderjs"                  : "*",
         "bootflatv2"                : "*",
         "bootbox"                   : "*",
@@ -33,5 +33,8 @@
         "fullcalendar"              : "~3.7",
         "bootstrap"                 : "3.*",
         "adminlte"                  : "~2.3"
+    },
+    "resolutions": {
+        "bootstrap": "3.4.1"
     }
 }
