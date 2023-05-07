@@ -29,7 +29,7 @@
         "bootflatv2"                : "*",
         "bootbox"                   : "*",
         "fontawesome"               : "~4.7",
-        "ionicons"                  : "*",
+        "ionicons"                  : "2.0.1",
         "fullcalendar"              : "~3.7",
         "bootstrap"                 : "~3.3.6",
         "adminlte"                  : "~2.3"
